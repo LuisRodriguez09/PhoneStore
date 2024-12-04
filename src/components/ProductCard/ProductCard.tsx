@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { Product } from "../../types/products";
 import { useProductsStore } from "../../store/products";
 
