@@ -1,6 +1,7 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { Product } from "../../types/products";
 import { useProductsStore } from "../../store/products";
+import toast from "../../utils/toast";
 
 const ProductCard: FC<Product> = (product) => {
   const { src, name } = product;
@@ -9,6 +10,7 @@ const ProductCard: FC<Product> = (product) => {
 
   const handleAddToCart = () => {
     setNewProduct({ ...product });
+    toast("success", "Producto agregado al carrito.");
   };
 
   return (

@@ -10,7 +10,7 @@ const TabsMainPage: FC<TabsMainPageProps> = ({
   setProductsSelected,
 }) => {
   return (
-    <ul className="flex mx-24">
+    <ul className="flex lg:mx-24">
       <li
         className={`px-4 py-2 cursor-pointer border-b-4 ${
           productsSelected === "bestSellers" &&

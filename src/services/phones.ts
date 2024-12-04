@@ -10,7 +10,7 @@ export const allPhones: Product[] = [
     rating: 5,
     maxQuantity: 10,
     description:
-      "More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new lorem ippsum dolor dummy lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go. Cover Flow. Browse through your music collection by flipping..",
+      "More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new lu go. Cover Flow. Browse through your music collection by flipping..",
     isAddedToWishlist: false,
   },
   {
@@ -22,7 +22,7 @@ export const allPhones: Product[] = [
     rating: 4,
     maxQuantity: 10,
     description:
-      "More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new lorem ippsum dolor dummy lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go. Cover Flow. Browse through your music collection by flipping..",
+      "More room to move. With 80GB or 160GB of storage and up to 40 hours of battery lifeer you go",
     isAddedToWishlist: false,
   },
   {
@@ -34,7 +34,7 @@ export const allPhones: Product[] = [
     rating: 3,
     maxQuantity: 10,
     description:
-      "More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new lorem ippsum dolor dummy lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go. Cover Flow. Browse through your music collection by flipping..",
+      "More room to move. With 80GB or 160GB of storage and up to 40 hours of battery lifer you go",
     isAddedToWishlist: false,
   },
   {
@@ -46,7 +46,7 @@ export const allPhones: Product[] = [
     rating: 2,
     maxQuantity: 10,
     description:
-      "More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new lorem ippsum dolor dummy lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go. Cover Flow. Browse through your music collection by flipping..",
+      "More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life",
     isAddedToWishlist: false,
   },
   {
@@ -57,7 +57,7 @@ export const allPhones: Product[] = [
     rating: 1,
     maxQuantity: 10,
     description:
-      "More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new lorem ippsum dolor dummy lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go. Cover Flow. Browse through your music collection by flipping..",
+      "More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life",
     isAddedToWishlist: false,
   },
   {
@@ -68,7 +68,7 @@ export const allPhones: Product[] = [
     rating: 5,
     maxQuantity: 10,
     description:
-      "More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new lorem ippsum dolor dummy lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go. Cover Flow. Browse through your music collection by flipping..",
+      "More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life",
     isAddedToWishlist: false,
   },
 ];
