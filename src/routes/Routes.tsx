@@ -6,6 +6,7 @@ import {
 import Home from "../layout/Home";
 import Cart from "../layout/Cart";
 import Product from "../layout/Product";
+import Payment from "../layout/Payment";
 
 export interface Route {
   path: string;
@@ -40,6 +41,14 @@ export const routesList: Route[] = [
     handle: {
       breadcrumb: "Product",
       title: "Product",
+    },
+  },
+  {
+    path: "/payment",
+    element: <Payment />,
+    handle: {
+      breadcrumb: "Payment",
+      title: "Payment",
     },
   },
 ];
