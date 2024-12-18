@@ -9,7 +9,9 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex">
-              <div className="flex items-center">Phone Planet.</div>
+              <div className="flex items-center cursor-pointer" onClick={() => navigate("/")}>
+                Phone Store.
+              </div>
               <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                 <a
                   href="#"
@@ -74,7 +76,10 @@ const Header = () => {
               </div>
             </div>
             <div className="flex items-center">
-              <button onClick={() => navigate("/cart")} className="ml-4 p-2 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              <button
+                onClick={() => navigate("/cart")}
+                className="ml-4 p-2 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
                 <span className="sr-only">Cart</span>
                 <svg
                   className="h-6 w-6"
