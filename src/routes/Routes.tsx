@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import Home from "../layout/Home";
 import Cart from "../layout/Cart";
+import Product from "../layout/Product";
 
 export interface Route {
   path: string;
@@ -31,6 +32,14 @@ export const routesList: Route[] = [
     handle: {
       breadcrumb: "Cart",
       title: "Cart",
+    },
+  },
+  {
+    path: "/product/:productId",
+    element: <Product />,
+    handle: {
+      breadcrumb: "Product",
+      title: "Product",
     },
   },
 ];
