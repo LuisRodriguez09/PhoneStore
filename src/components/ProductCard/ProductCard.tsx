@@ -4,7 +4,7 @@ import { useProductsStore } from "../../store/products";
 import { useNavigate } from "react-router-dom";
 
 const ProductCard: FC<Product> = (product) => {
-  const { src, name } = product;
+  const { mainPhoto: src, name, id } = product;
   const { setNewProduct } = useProductsStore();
 
   const navigate = useNavigate();
@@ -17,13 +17,13 @@ const ProductCard: FC<Product> = (product) => {
     <div className="relative m-0 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
       <div
         className="relative mx-3 mt-3 h-60 overflow-hidden rounded-xl flex justify-center"
-        onClick={() => navigate("/product/1")}
+        onClick={() => navigate(`/product/${id}`)}
       >
         <img
           className="object-cover cursor-pointer"
           src={src}
           alt="product image"
-          onClick={() => navigate("/product/1")}
+          onClick={() => navigate(`/product/${id}`)}
         />
         <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">
           39% OFF
@@ -37,7 +37,7 @@ const ProductCard: FC<Product> = (product) => {
         </a>
         <div
           className="mt-2 mb-5 flex items-center justify-between"
-          onClick={() => navigate("/product/1")}
+          onClick={() => navigate(`/product/${id}`)}
         >
           <p>
             <span className="text-3xl font-bold text-slate-900">$449</span>

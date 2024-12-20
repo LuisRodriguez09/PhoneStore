@@ -1,15 +1,64 @@
+import { FC, useState } from "react";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 
-const ProductImageZoom = () => {
+interface ProductImageZoomProps {
+  mainPhoto: string;
+  secPhoto: string;
+  trdPhoto: string;
+}
+
+const ProductImageZoom: FC<ProductImageZoomProps> = ({
+  mainPhoto,
+  secPhoto,
+  trdPhoto,
+}) => {
+  const [currentPhoto, setCurrentPhoto] = useState(mainPhoto);
+
+  const handleChangePhoto = (photo: string) => {
+    setCurrentPhoto(photo);
+  };
+
   return (
-    <Zoom>
-      <img
-        alt="That Wanaka Tree, New Zealand by Laura Smetsers"
-        src="https://www.khatwtelephone.com/lb/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-20-at-6.10.44-PM.jpeg"
-        width="500"
-      />
-    </Zoom>
+    <>
+      <div className="flex flex-col justify-between mr-2">
+        <Zoom>
+          <img
+            alt="That Wanaka Tree, New Zealand by Laura Smetsers"
+            src={mainPhoto}
+            width="170"
+            className="mb-2 rounded-xl"
+            onClick={() => handleChangePhoto(mainPhoto)}
+          />
+        </Zoom>
+        <Zoom>
+          <img
+            alt="That Wanaka Tree, New Zealand by Laura Smetsers"
+            src={secPhoto}
+            width="170"
+            className="mb-2 rounded-xl"
+            onClick={() => handleChangePhoto(mainPhoto)}
+          />
+        </Zoom>
+        <Zoom>
+          <img
+            alt="That Wanaka Tree, New Zealand by Laura Smetsers"
+            src={trdPhoto}
+            width="170"
+            className="rounded-xl"
+            onClick={() => handleChangePhoto(mainPhoto)}
+          />
+        </Zoom>
+      </div>
+      <Zoom>
+        <img
+          alt="That Wanaka Tree, New Zealand by Laura Smetsers"
+          src={currentPhoto}
+          width="515"
+          className="rounded-xl"
+        />
+      </Zoom>
+    </>
   );
 };
 

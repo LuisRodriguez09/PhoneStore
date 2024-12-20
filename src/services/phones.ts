@@ -1,74 +1,139 @@
 import { Product } from "../types/products";
 
-export const allPhones: Product[] = [
+export const phones: Product[]  = [
   {
     id: 1,
-    src: "https://clevercel.mx/cdn/shop/files/apple-iphone-14-pro-max-1_1_617x.jpg?v=1697574974",
-    name:
-      "iPhone 14 Pro Max 256GB",
-    price: 300,
-    rating: 5,
-    maxQuantity: 10,
-    description:
-      "More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new lorem ippsum dolor dummy lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go. Cover Flow. Browse through your music collection by flipping..",
+    mainPhoto:
+      "https://www.khatwtelephone.com/lb/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-26-at-3.46.39-PM-1.jpeg",
+    secPhoto:
+      "https://www.khatwtelephone.com/lb/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-26-at-3.46.39-PM-2.jpeg",
+    trdPhoto:
+      "https://www.khatwtelephone.com/lb/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-26-at-3.46.39-PM.jpeg",
+    name: "iPhone 14 Pro Max 256GB Excelente Estado",
+    price: 950,
+    info: [
+      "88% de batería",
+      "Caja original",
+      "Cargador original",
+      "Nunca reparado",
+    ],
+    categories: ["iPhone", "Apple"],
     isAddedToWishlist: false,
+    description: ''
   },
   {
     id: 2,
-    src: "https://clevercel.mx/cdn/shop/products/apple-iphone-13-pro-max-01_478x_a4a8d9bb-d545-41ee-b329-4635fc20ef92_478x.jpg?v=1671052858",
-    name:
-      "iPhone 13 Pro Max 256GB",
-    price: 400,
-    rating: 4,
-    maxQuantity: 10,
-    description:
-      "More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new lorem ippsum dolor dummy lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go. Cover Flow. Browse through your music collection by flipping..",
+    mainPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-26-at-3.20.31-PM-1.jpeg',
+    secPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-26-at-3.20.31-PM-2.jpeg',
+    trdPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-26-at-3.20.31-PM.jpeg',
+    name: "iPhone 14 Pro Max 256GB Dual Sim excelente estado",
+    price: 950,
+    info: [
+      "96% de batería",
+      "Caja original",
+      "Cargador original",
+      "Nunca reparado",
+      'Dual Sim'
+    ],
+    categories: ["iPhone", "Apple"],
     isAddedToWishlist: false,
+    description: ''
   },
   {
     id: 3,
-    src: "https://clevercel.mx/cdn/shop/files/apple-iphone-15-pro-max-1_608x.jpg?v=1727976395",
-    name:
-      "iPhone 15 Pro Max 512GB",
+    mainPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-26-at-2.55.27-PM-2.jpeg',
+    secPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-26-at-2.55.27-PM.jpeg',
+    trdPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-26-at-2.55.27-PM-1.jpeg',
+    name: 'iPhone 11 128gb excelente estado',
     price: 500,
-    rating: 3,
-    maxQuantity: 10,
-    description:
-      "More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new lorem ippsum dolor dummy lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go. Cover Flow. Browse through your music collection by flipping..",
+    info: [
+      "85% de batería",
+      "Cargador original",
+      "Nunca reparado",
+    ],
+    categories: ["iPhone", "Apple"],
     isAddedToWishlist: false,
+    description: ''
   },
   {
     id: 4,
-    src: "https://clevercel.mx/cdn/shop/files/apple-iphone-15-pro-1_627x.jpg?v=1727976398",
-    name:
-      "iPhone 14 Pro 256GB",
-    price: 600,
-    rating: 2,
-    maxQuantity: 10,
-    description:
-      "More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new lorem ippsum dolor dummy lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go. Cover Flow. Browse through your music collection by flipping..",
+    mainPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-20-at-6.10.44-PM.jpeg',
+    secPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-20-at-6.10.44-PM-1.jpeg',
+    trdPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-20-at-6.10.45-PM-1.jpeg',
+    name: 'iPhone 13 Pro 128gb excelente estado',
+    price: 800,
+    info: [
+      "96% de batería",
+      "Cargador original",
+      "Muy pequeñas rayaduras en el marco",
+      'Caja'
+    ],
+    categories: ["iPhone", "Apple"],
     isAddedToWishlist: false,
+    description: ''
   },
   {
     id: 5,
-    src: "https://clevercel.mx/cdn/shop/files/apple-iphone-14-3_578x.jpg?v=1697570385",
-    name: "iPhone 14 256GB",
-    price: 700,
-    rating: 1,
-    maxQuantity: 10,
-    description:
-      "More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new lorem ippsum dolor dummy lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go. Cover Flow. Browse through your music collection by flipping..",
+    mainPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-20-at-5.16.59-PM.jpeg',
+    secPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-20-at-5.16.59-PM-1.jpeg',
+    trdPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-20-at-5.16.59-PM-2.jpeg',
+    name: 'iPhone 14 Pro Max 256gb excelente estado',
+    price: 950,
+    info: [
+      "96% de batería",
+      "Cargador original",
+      "Nunca reparado",
+    ],
+    categories: ["iPhone", "Apple"],
     isAddedToWishlist: false,
+    description: ''
   },
   {
     id: 6,
-    src: "https://clevercel.mx/cdn/shop/products/apple-iphone-12-pro-r1_1_474x_474x_c2be1109-ba7a-41b7-8601-6c787807fecd_474x.jpg?v=1714576851",
-    name: "iPhone 12 Pro 256GB",
-    price: 800,
-    rating: 5,
-    maxQuantity: 10,
-    description:
-      "More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new lorem ippsum dolor dummy lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go. Cover Flow. Browse through your music collection by flipping..",
+    mainPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/08/WhatsApp-Image-2024-08-13-at-3.34.28-PM.jpeg',
+    secPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/08/WhatsApp-Image-2024-08-13-at-3.34.28-PM-3.jpeg',
+    trdPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/08/WhatsApp-Image-2024-08-13-at-3.34.27-PM.jpeg',
+    name: 'iphone 11 Pro Max 256gb excelente estado',
+    price: 700,
+    info: [
+      "100% de batería",
+      "Cargador original",
+      'Batería reemplazada (original)'
+    ],
+    categories: ["iPhone", "Apple"],
     isAddedToWishlist: false,
+    description: ''
   },
+  {
+    id: 7,
+    mainPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-24-at-12.25.15-PM.jpeg',
+    secPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-24-at-12.25.15-PM-1.jpeg',
+    trdPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-24-at-12.25.16-PM-1.jpeg',
+    name: 'iPhone 13 Pro Max 256gb excelente estado',
+    price: 900,
+    info: [
+      "96% de batería",
+      "Cargador original",
+      "Nunca reparado",
+    ],
+    categories: ["iPhone", "Apple"],
+    isAddedToWishlist: false,
+    description: ''
+  },
+  {
+    id: 8,
+    mainPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-20-at-4.54.58-PM.jpeg',
+    secPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-20-at-4.54.58-PM-1.jpeg',
+    trdPhoto: 'https://www.khatwtelephone.com/lb/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-20-at-4.54.59-PM-1.jpeg',
+    name: 'iPhone 15 Pro Max 1TB excelente estado',
+    price: 1000,
+    info: [
+      "98% de batería",
+      "Cargador original",
+      "Nunca reparado",
+    ],
+    categories: ["iPhone", "Apple"],
+    isAddedToWishlist: false,
+    description: ''
+  }
 ];

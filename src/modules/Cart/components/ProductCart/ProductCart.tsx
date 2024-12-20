@@ -6,7 +6,7 @@ interface ProductCart {
 }
 
 const ProductCart: FC<Product> = (product) => {
-  const { name, description, price, src } = product;
+  const { name, description, price, mainPhoto: src } = product;
 
   return (
     <div className="flex mt-4">

@@ -1,11 +1,11 @@
 import { FC } from "react";
 import { Product } from "../../../../types/products";
 
-const PaymentProduct: FC<Product> = ({ src, name, description, price }) => {
+const PaymentProduct: FC<Product> = ({ mainPhoto, name, description, price }) => {
   return (
     <div className="flex mb-2">
       <img
-        src={src}
+        src={mainPhoto}
         className="w-[50px] h-[50px] mr-2"
         alt="Imagen de producto a pagar"
       />

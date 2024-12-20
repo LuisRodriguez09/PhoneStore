@@ -1,10 +1,13 @@
 export interface Product {
   id: number;
-  src: string;
+  mainPhoto: string;
   name: string;
   price: number;
-  rating: number;
+  secPhoto: string;
   description: string;
   isAddedToWishlist: boolean;
   maxQuantity?: number;
+  trdPhoto: string;
+  info: string[];
+  categories: string[];
 }
