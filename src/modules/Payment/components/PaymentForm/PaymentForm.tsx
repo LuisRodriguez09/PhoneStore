@@ -1,4 +1,5 @@
 import { FaWhatsapp } from "react-icons/fa";
+import { statesOfMexico } from "../../../../services/statesOfMexicoList";
 
 const PaymentForm = () => {
   return (
@@ -18,9 +19,52 @@ const PaymentForm = () => {
       </div>
       <div className="mt-3">
         <form action="">
-          <div className="flex flex-col">
-            <label className="font-semibold text-lg mb-2" >Contacto</label>
-            <input className="border rounded-md px-3 py-2 border-gray-300" type="text" placeholder="Correo electrónico" />
+          <div className="flex flex-col mb-2">
+            <label className="font-semibold text-lg mb-2">Contacto</label>
+            <input
+              className="border rounded-md px-3 py-2 border-gray-300"
+              type="text"
+              placeholder="Correo electrónico"
+            />
+          </div>
+          <div className="flex flex-col mb-2">
+            <label className="font-semibold text-lg mb-2">
+              Nombre completo
+            </label>
+            <input
+              className="border rounded-md px-3 py-2 border-gray-300"
+              type="text"
+              placeholder="Nombre completo"
+            />
+          </div>
+          <div className="flex flex-col mb-2">
+            <label className="font-semibold text-lg mb-2">Dirección</label>
+            <input
+              className="border rounded-md px-3 py-2 border-gray-300"
+              type="text"
+              placeholder="Dirección"
+            />
+          </div>
+          <div className="flex flex-col mb-2">
+            <label className="font-semibold text-lg mb-2">Estado</label>
+            <select
+              name="stateOfMex"
+              className="border rounded-md px-3 py-2 border-gray-300"
+            >
+              {statesOfMexico.map((state) => (
+                <option key={state.abbreviation} value={state.abbreviation}>
+                  {state.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="flex flex-col mb-2">
+            <label className="font-semibold text-lg mb-2">Teléfono</label>
+            <input
+              className="border rounded-md px-3 py-2 border-gray-300"
+              type="text"
+              placeholder="teléfono"
+            />
           </div>
         </form>
       </div>
