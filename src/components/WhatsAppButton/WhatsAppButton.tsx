@@ -1,12 +1,12 @@
 import { FaWhatsapp } from 'react-icons/fa'; 
 import './WhatsAppButton.css';
+import { PHONE_NUMBER } from '../../constants';
 
 const WhatsAppButton = () => {
-  const phoneNumber = '+526391176171';
   const message = 'Hola, me gustaría obtener más información.';
 
   const openWhatsAppChat = () => {
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
 

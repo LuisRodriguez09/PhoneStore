@@ -6,7 +6,7 @@ const PaymentProduct: FC<Product> = ({ mainPhoto, name, description, price }) =>
     <div className="flex mb-2">
       <img
         src={mainPhoto}
-        className="w-[50px] h-[50px] mr-2"
+        className="w-[80px] h-[80px] mr-2"
         alt="Imagen de producto a pagar"
       />
       <div className="mx-1">

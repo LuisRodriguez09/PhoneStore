@@ -8,8 +8,6 @@ import { useProductsStore } from "../store/products";
 const Cart = () => {
   const { productsSelected } = useProductsStore();
 
-  console.log(productsSelected);
-
   return (
     <main>
       <Header />
