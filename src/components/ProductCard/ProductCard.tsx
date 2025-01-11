@@ -2,11 +2,13 @@ import { FC } from "react";
 import { Product } from "../../types/products";
 import { useProductsStore } from "../../store/products";
 import toast from "../../utils/toast";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard: FC<Product> = (product) => {
-  const { src, name } = product;
+  const { mainPhoto: src, name, id } = product;
   const { setNewProduct } = useProductsStore();
-  
+
+  const navigate = useNavigate();
 
   const handleAddToCart = () => {
     setNewProduct({ ...product });
@@ -15,26 +17,37 @@ const ProductCard: FC<Product> = (product) => {
 
   return (
     <div className="relative m-0 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
-      <a className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
+      <div
+        className="relative mx-3 mt-3 h-60 overflow-hidden rounded-xl flex justify-center"
+        onClick={() => navigate(`/product/${id}`)}
+      >
         <img
-          className="object-cover"
+          className="object-cover cursor-pointer"
           src={src}
           alt="product image"
+          onClick={() => navigate(`/product/${id}`)}
         />
-        <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">39% OFF</span>
-      </a>
+        <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">
+          39% OFF
+        </span>
+      </div>
       <div className="mt-4 px-5 pb-5">
-        <a href="#">
-          <h5 className="text-xl tracking-tight text-slate-900">{name}</h5>
+        <a>
+          <h5 className="text-xl tracking-tight text-slate-900 cursor-pointer">
+            {name}
+          </h5>
         </a>
-        <div className="mt-2 mb-5 flex items-center justify-between">
+        <div
+          className="mt-2 mb-5 flex items-center justify-between"
+          onClick={() => navigate(`/product/${id}`)}
+        >
           <p>
             <span className="text-3xl font-bold text-slate-900">$449</span>
             <span className="text-sm text-slate-900 line-through">$699</span>
           </p>
           <div className="flex items-center">
             {Array(5)
-              .fill('')
+              .fill("")
               .map((_, index) => (
                 <svg
                   key={index}
@@ -47,7 +60,9 @@ const ProductCard: FC<Product> = (product) => {
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                 </svg>
               ))}
-            <span className="mr-2 ml-3 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">5.0</span>
+            <span className="mr-2 ml-3 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">
+              5.0
+            </span>
           </div>
         </div>
         <div

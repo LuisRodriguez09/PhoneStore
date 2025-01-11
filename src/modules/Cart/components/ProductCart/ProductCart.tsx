@@ -7,7 +7,7 @@ interface ProductCart {
 }
 
 const ProductCart: FC<Product> = (product) => {
-  const { id, name, description, price, src } = product;
+  const { name, description, price, mainPhoto: src } = product;
 
   const { removeProduct } = useProductsStore();
 

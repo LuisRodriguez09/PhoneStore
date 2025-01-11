@@ -5,11 +5,10 @@ import PaymentList from "./components/PaymentList";
 const PaymentContainer = () => {
   const { productsSelected } = useProductsStore();
 
-    console.log(productsSelected)
-
   return (
-    <div className=" flex h-full">
-      <PaymentForm />
+    <div className="lg:flex-row flex flex-col h-full">
+      {/* <FlagPayment productsSelected={productsSelected} /> */}
+      <PaymentForm productsSelected={productsSelected} />
       <PaymentList productsSelected={productsSelected} />
     </div>
   );

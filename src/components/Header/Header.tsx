@@ -74,7 +74,10 @@ const Header = () => {
               </div>
             </div>
             <div className="flex items-center">
-              <button onClick={() => navigate("/cart")} className="ml-4 p-2 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              <button
+                onClick={() => navigate("/cart")}
+                className="ml-4 p-2 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
                 <span className="sr-only">Cart</span>
                 <svg
                   className="h-6 w-6"
