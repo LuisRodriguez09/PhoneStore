@@ -14,6 +14,13 @@ export const useProductsStore = create<Products>((set) => ({
 
   setNewProduct: (product) =>
     set((state) => {
+      // Comprobar si el producto ya está en el carrito
+      const productExists = state.productsSelected.some(
+        (productSelected) => productSelected.id === product.id
+      );
+      if (productExists) {
+        return state;
+      }
       const updatedProducts = [...state.productsSelected, product];
       localStorage.setItem("productsSelected", JSON.stringify(updatedProducts)); // Guardar en localStorage
       return { productsSelected: updatedProducts };
