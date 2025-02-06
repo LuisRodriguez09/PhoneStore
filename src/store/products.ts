@@ -8,16 +8,27 @@ interface Products {
 }
 
 export const useProductsStore = create<Products>((set) => ({
-  productsSelected: [],
+  productsSelected: JSON.parse(
+    localStorage.getItem("productsSelected") || "[]"
+  ), // Cargar desde localStorage si existe
 
   setNewProduct: (product) =>
-    set((state) => ({
-      productsSelected: [...state.productsSelected, product],
-    })),
+    set((state) => {
+      const updatedProducts = [...state.productsSelected, product];
+      localStorage.setItem("productsSelected", JSON.stringify(updatedProducts)); // Guardar en localStorage
+      return { productsSelected: updatedProducts };
+    }),
+
   removeProduct: (product) =>
-    set((state) => ({
-      productsSelected: state.productsSelected.filter(
+    set((state) => {
+      // Filtrar el producto que se desea eliminar
+      const updatedProducts = state.productsSelected.filter(
         (productSelected) => productSelected.id !== product.id
-      ),
-    })),
+      );
+
+      // Actualizar el localStorage con la nueva lista
+      localStorage.setItem("productsSelected", JSON.stringify(updatedProducts));
+
+      return { productsSelected: updatedProducts }; // Devolver el nuevo estado
+    }),
 }));

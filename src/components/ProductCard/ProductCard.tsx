@@ -5,7 +5,7 @@ import toast from "../../utils/toast";
 import { useNavigate } from "react-router-dom";
 
 const ProductCard: FC<Product> = (product) => {
-  const { mainPhoto: src, name, id } = product;
+  const { mainPhoto: src, name, id, price } = product;
   const { setNewProduct } = useProductsStore();
 
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ const ProductCard: FC<Product> = (product) => {
           onClick={() => navigate(`/product/${id}`)}
         />
         <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">
-          39% OFF
+          5% OFF
         </span>
       </div>
       <div className="mt-4 px-5 pb-5">
@@ -42,10 +42,10 @@ const ProductCard: FC<Product> = (product) => {
           onClick={() => navigate(`/product/${id}`)}
         >
           <p>
-            <span className="text-3xl font-bold text-slate-900">$449</span>
-            <span className="text-sm text-slate-900 line-through">$699</span>
+            <span className="text-3xl font-bold text-slate-900">${price}</span>
+            {/* <span className="text-sm text-slate-900 line-through">$699</span> */}
           </p>
-          <div className="flex items-center">
+          {/* <div className="flex items-center">
             {Array(5)
               .fill("")
               .map((_, index) => (
@@ -63,7 +63,7 @@ const ProductCard: FC<Product> = (product) => {
             <span className="mr-2 ml-3 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">
               5.0
             </span>
-          </div>
+          </div> */}
         </div>
         <div
           className="cursor-pointer flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"

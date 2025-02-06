@@ -1,8 +1,8 @@
 export interface Product {
-  id: number;
+  id: number | string;
   mainPhoto: string;
   name: string;
-  price: number;
+  price: number | string;
   secPhoto: string;
   description: string;
   isAddedToWishlist: boolean;
