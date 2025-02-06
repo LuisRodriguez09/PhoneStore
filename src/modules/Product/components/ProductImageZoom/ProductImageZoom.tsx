@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 
@@ -19,12 +19,16 @@ const ProductImageZoom: FC<ProductImageZoomProps> = ({
     setCurrentPhoto(photo);
   };
 
+  useEffect(() => {
+    setCurrentPhoto(mainPhoto);
+  }, [mainPhoto]);
+
   return (
     <>
       <div className="flex flex-col justify-between mr-2">
         <Zoom>
           <img
-            alt="That Wanaka Tree, New Zealand by Laura Smetsers"
+            alt="first main photo"
             src={mainPhoto}
             width="170"
             className="mb-2 rounded-xl"

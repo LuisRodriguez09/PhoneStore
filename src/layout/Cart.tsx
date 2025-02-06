@@ -8,11 +8,14 @@ import { useProductsStore } from "../store/products";
 const Cart = () => {
   const { productsSelected } = useProductsStore();
 
+  const productsFromLocalStorage = JSON.parse(localStorage.getItem("productsSelected") || "[]");
+
+
   return (
     <main>
       <Header />
       <div className="lg:px-32 py-10 h-auto bg-[#f7f9f9]">
-        {productsSelected.length ? (
+        {productsFromLocalStorage.length ? (
           <>
             <div className="w-full bg-white rounded-md border p-4">
               <HeaderCart />

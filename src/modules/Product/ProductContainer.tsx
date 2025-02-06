@@ -3,9 +3,12 @@ import { phones } from "../../services/phones";
 import ProductImageZoom from "./components/ProductImageZoom/ProductImageZoom";
 import { Product } from "../../types/products";
 import { useParams } from "react-router-dom";
+import { useProductsStore } from "../../store/products";
+import toast from "../../utils/toast";
 
 const ProductContainer = () => {
   const { productId } = useParams();
+  const { setNewProduct } = useProductsStore();
 
   const [phone, setPhone] = useState<Product>({
     id: 0,
@@ -22,11 +25,16 @@ const ProductContainer = () => {
   });
 
   useEffect(() => {
-    const phone = phones.find((phone) => phone.id === Number(productId));
+    const phone = phones.find((phone) => phone.id === productId);
     if (phone) {
       setPhone(phone);
     }
   }, []);
+
+  const addToCart = () => {
+    setNewProduct({ ...phone });
+    toast("success", "Producto agregado al carrito.");
+  };
 
   return (
     <main className="lg:px-32 py-10 h-auto bg-[#f7f9f9] flex justify-between">
@@ -44,7 +52,7 @@ const ProductContainer = () => {
           ))}
         </ul>
         <div className="flex">
-          <button className="border-2 w-40 p-2 rounded-md">
+          <button className="border-2 w-40 p-2 rounded-md" onClick={addToCart}>
             Agregar al carrito
           </button>
           <button className="border-2 w-40 p-2 rounded-md">
