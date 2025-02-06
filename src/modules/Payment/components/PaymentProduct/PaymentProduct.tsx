@@ -2,8 +2,14 @@ import { FC } from "react";
 import { Product } from "../../../../types/products";
 
 const PaymentProduct: FC<Product> = ({ mainPhoto, name, description, price }) => {
+
+  const handleRemoveProduct = () => {
+    // Lógica para eliminar un producto del carrito
+  }
+
   return (
-    <div className="flex mb-2">
+    <div className="flex flex-col mb-2">
+      <div className="flex">
       <img
         src={mainPhoto}
         className="w-[80px] h-[80px] mr-2"
@@ -15,8 +21,12 @@ const PaymentProduct: FC<Product> = ({ mainPhoto, name, description, price }) =>
       </div>
       <div>
         <p>${price}</p>
-        <p>Quantity</p>
+        <p>1</p>
       </div>
+    </div>
+    <div>
+      <button onClick={handleRemoveProduct} >Eliminar</button>
+    </div>
     </div>
   );
 };
