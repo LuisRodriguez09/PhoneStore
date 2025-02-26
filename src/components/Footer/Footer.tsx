@@ -57,7 +57,7 @@ function Footer() {
             <Column>
               <FooterLink>
                 <GeoAltFill className="me-2"></GeoAltFill>
-                12345 Street name, CaFooterLinkfornia
+                C. Libertad 514, Zona Centro, 31000 Chihuahua, Chih.
               </FooterLink>
               <FooterLink>
                 <EnvelopeFill className="me-2"></EnvelopeFill>

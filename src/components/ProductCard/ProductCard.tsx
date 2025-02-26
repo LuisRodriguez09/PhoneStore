@@ -27,9 +27,9 @@ const ProductCard: FC<Product> = (product) => {
           alt="product image"
           onClick={() => navigate(`/product/${id}`)}
         />
-        <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">
+        {/* <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">
           5% OFF
-        </span>
+        </span> */}
       </div>
       <div className="mt-4 px-5 pb-5">
         <a>
