@@ -4,7 +4,7 @@ import { Product } from "../../../../types/products";
 const PaymentProduct: FC<Product> = ({ mainPhoto, name, description, price }) => {
 
   const handleRemoveProduct = () => {
-    // Lógica para eliminar un producto del carrito
+    
   }
 
   return (
