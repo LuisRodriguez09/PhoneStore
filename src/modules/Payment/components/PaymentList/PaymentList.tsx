@@ -7,30 +7,37 @@ interface PaymentListProps {
 }
 
 const PaymentList: FC<PaymentListProps> = ({ productsSelected }) => {
+  const subtotal = productsSelected.reduce(
+    (sum, product) => sum + Number(product.price),
+    0
+  );
+
   return (
-    <section className="py-4 lg:px-20 px-3  lg:w-1/2 w-full bg-[#f7f9f9] h-screen">
-      <h1 className="text-center fontArial">Tu orden</h1>
-      <div className="bg-white p-3 shadow-md mb-3">
+    <section className="w-full rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-sm sm:p-6 lg:w-1/2 lg:p-8">
+      <h1 className="text-center text-xl font-black text-slate-900 sm:text-2xl">Tu orden</h1>
+      <div className="mb-4 mt-4 rounded-xl border border-slate-200 bg-white p-3 shadow-sm sm:p-4">
         {productsSelected.map((product) => (
           <PaymentProduct key={product.id} {...product} />
         ))}
       </div>
-      <div>
-        <div className="flex justify-between">
+      <div className="space-y-2 text-sm sm:text-base">
+        <div className="flex justify-between text-slate-700">
           <p className="font-semibold">Subtotal</p>
-          <p>$XXXX</p>
+          <p>${subtotal}</p>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between text-slate-500">
           <p>Envío</p>
-          <p>Introducir la dirección de envío</p>
+          <p>Se calcula al confirmar</p>
         </div>
-        <div className="flex justify-between">
-          <p className="font-bold">Total</p>
-          <p className="font-bold">$XXXX</p>
+        <div className="flex justify-between border-t border-slate-200 pt-2 text-lg text-slate-900">
+          <p className="font-black">Total</p>
+          <p className="font-black">${subtotal}</p>
         </div>
       </div>
-      <div>
-        <button className="w-full bg-blue-600 text-white p-3 h-[45px] flex items-center justify-center" >Realizar pedido</button>
+      <div className="mt-4">
+        <button className="flex h-[48px] w-full items-center justify-center rounded-xl bg-slate-900 p-3 font-bold text-white transition hover:bg-slate-700">
+          Realizar pedido
+        </button>
       </div>
     </section>
   );

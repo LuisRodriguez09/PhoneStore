@@ -43,32 +43,41 @@ const ProductContainer = () => {
   };
 
   return (
-    <main className="lg:px-32 py-10 h-auto bg-[#f7f9f9] flex justify-between">
-      <ProductImageZoom
-        mainPhoto={phone.mainPhoto}
-        secPhoto={phone.secPhoto}
-        trdPhoto={phone.trdPhoto}
-      />
-      <div className="border-2 p-3 rounded-xl w-[40%] shadow-sm bg-white">
-        <h3>{phone.name}</h3>
-        <p className="font-bold">${phone.price}</p>
-        <ul className="p-0 text-xs font-semibold">
-          {phone.info.map((item, index) => (
-            <li key={index}>- {item}</li>
-          ))}
-        </ul>
-        <div className="flex">
-          <button className="border-2 w-40 p-2 rounded-md" onClick={addToCart}>
-            Agregar al carrito
-          </button>
-          <button
-            className="border-2 w-40 p-2 rounded-md"
-            onClick={goToPayment}
-          >
-            Comprar ahora
-          </button>
+    <main className="flex-1 bg-slate-100/70 py-6 sm:py-8 lg:py-10">
+      <section className="content-wrap grid grid-cols-1 gap-6 lg:grid-cols-[1.4fr_1fr]">
+        <div className="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm sm:p-4">
+          <ProductImageZoom
+            mainPhoto={phone.mainPhoto}
+            secPhoto={phone.secPhoto}
+            trdPhoto={phone.trdPhoto}
+          />
         </div>
-      </div>
+        <div className="h-fit rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6">
+          <h3 className="text-2xl font-black text-slate-900 sm:text-3xl">{phone.name}</h3>
+          <p className="mt-2 text-2xl font-black text-slate-900 sm:text-3xl">${phone.price}</p>
+          <ul className="mt-4 space-y-2 pl-4 text-sm font-semibold text-slate-700 sm:text-base">
+          {phone.info.map((item, index) => (
+            <li key={index} className="list-disc">
+              {item}
+            </li>
+          ))}
+          </ul>
+          <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <button
+              className="rounded-xl border border-slate-300 px-4 py-3 font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50"
+              onClick={addToCart}
+            >
+              Agregar al carrito
+            </button>
+            <button
+              className="rounded-xl bg-slate-900 px-4 py-3 font-semibold text-white transition hover:bg-slate-700"
+              onClick={goToPayment}
+            >
+              Comprar ahora
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
   );
 };

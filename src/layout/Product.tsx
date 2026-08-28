@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 const Product = () => {
   return (
-    <main>
+    <main className="flex min-h-screen flex-col">
       <Header />
       <ProductContainer />
       <Footer />

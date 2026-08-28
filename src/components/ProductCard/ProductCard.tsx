@@ -5,7 +5,7 @@ import toast from "../../utils/toast";
 import { useNavigate } from "react-router-dom";
 
 const ProductCard: FC<Product> = (product) => {
-  const { mainPhoto: src, name, id, price } = product;
+  const { mainPhoto: src, name, id, price, description } = product;
   const { setNewProduct } = useProductsStore();
 
   const navigate = useNavigate();
@@ -16,58 +16,51 @@ const ProductCard: FC<Product> = (product) => {
   };
 
   return (
-    <div className="relative m-0 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
+    <article className="group relative flex h-full w-full flex-col overflow-hidden rounded-[30px] bg-white p-2 shadow-sm ring-1 ring-slate-200/70 transition hover:-translate-y-1 hover:shadow-xl">
       <div
-        className="relative mx-3 mt-3 h-60 overflow-hidden rounded-xl flex justify-center"
+        className="relative flex h-60 cursor-pointer items-center justify-center overflow-hidden rounded-[24px] bg-[#f5f5f7] sm:h-64"
         onClick={() => navigate(`/product/${id}`)}
       >
         <img
-          className="object-cover cursor-pointer"
+          className="h-full w-full object-cover transition group-hover:scale-[1.03]"
           src={src}
-          alt="product image"
+          alt={`Imagen de ${name}`}
           onClick={() => navigate(`/product/${id}`)}
         />
-        {/* <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">
-          5% OFF
-        </span> */}
       </div>
-      <div className="mt-4 px-5 pb-5">
-        <a>
-          <h5 className="text-xl tracking-tight text-slate-900 cursor-pointer">
-            {name}
-          </h5>
-        </a>
-        <div
-          className="mt-2 mb-5 flex items-center justify-between"
+      <div className="flex flex-1 flex-col px-4 pb-4 pt-4 sm:px-5 sm:pb-5">
+        <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-sky-600">
+          Seminuevo verificado
+        </p>
+        <h5
+          className="mt-2 cursor-pointer text-xl font-black tracking-tight text-slate-900 sm:text-2xl"
           onClick={() => navigate(`/product/${id}`)}
         >
-          <p>
-            <span className="text-3xl font-bold text-slate-900">${price}</span>
-            {/* <span className="text-sm text-slate-900 line-through">$699</span> */}
-          </p>
-        </div>
-        <div
-          className="cursor-pointer flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
-          onClick={handleAddToCart}
+          {name}
+        </h5>
+        <p
+          className="mt-2 line-clamp-2 cursor-pointer text-sm font-semibold leading-6 text-slate-500"
+          onClick={() => navigate(`/product/${id}`)}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2 h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth="2"
+          {description}
+        </p>
+        <div className="mb-4 mt-5 flex items-end justify-between gap-4">
+          <p>
+            <span className="block text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
+              Desde
+            </span>
+            <span className="text-2xl font-black text-slate-900 sm:text-3xl">${price}</span>
+          </p>
+
+          <button
+            className="inline-flex min-h-11 items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-sm font-bold text-white transition hover:bg-slate-700"
+            onClick={handleAddToCart}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-            />
-          </svg>
-          Agregar al carrito
+            Agregar
+          </button>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 
