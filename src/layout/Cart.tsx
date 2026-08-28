@@ -12,12 +12,13 @@ const Cart = () => {
 
 
   return (
-    <main>
+    <main className="flex min-h-screen flex-col">
       <Header />
-      <div className="lg:px-32 py-10 h-auto bg-[#f7f9f9]">
+      <div className="flex-1 bg-slate-100/70 py-6 sm:py-8 lg:py-10">
+        <div className="content-wrap">
         {productsFromLocalStorage.length ? (
           <>
-            <div className="w-full bg-white rounded-md border p-4">
+            <div className="w-full rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6">
               <HeaderCart />
               <ProductsCartList productsSelected={productsSelected} />
             </div>
@@ -25,6 +26,7 @@ const Cart = () => {
         ) : (
           <EmptyCart />
         )}
+        </div>
       </div>
       <Footer />
     </main>

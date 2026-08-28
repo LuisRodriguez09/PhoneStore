@@ -23,56 +23,53 @@ const PaymentForm: FC<PaymentFormProps> = ({ productsSelected }) => {
   };
 
   return (
-    <section className="py-4 lg:px-20 px-3 lg:w-1/2 w-full  h-screen">
-      <div className="flex flex-col items-center text-gray-500">
-        <h4 className="text-sm cursor-pointer">
+    <section className="w-full rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6 lg:w-1/2 lg:p-8">
+      <div className="rounded-2xl bg-slate-50 p-4 text-center text-slate-600 sm:p-5">
+        <h4 className="text-sm font-semibold sm:text-base">
           Puedes realizar tu pago de forma express por WhatsApp!
         </h4>
-        <div>
+        <div className="mt-3 flex justify-center">
           <FaWhatsapp
             color="#25D366"
-            className="cursor-pointer mt-3"
-            size={50}
+            className="cursor-pointer"
+            size={46}
             onClick={openWhatsAppChat}
           />
         </div>
       </div>
-      <div className="flex justify-center mt-3">
-        <span className="w-full h-[1px] bg-gray-500" />
-      </div>
-      <div className="mt-3">
+      <div className="mt-5">
         <form action="">
-          <div className="flex flex-col mb-2">
-            <label className="font-semibold text-lg mb-2">Contacto</label>
+          <div className="mb-3 flex flex-col">
+            <label className="mb-2 text-base font-bold text-slate-700">Contacto</label>
             <input
-              className="border rounded-md px-3 py-2 border-gray-300"
+              className="rounded-xl border border-slate-300 px-3 py-2.5"
               type="text"
               placeholder="Correo electrónico"
             />
           </div>
-          <div className="flex flex-col mb-2">
-            <label className="font-semibold text-lg mb-2">
+          <div className="mb-3 flex flex-col">
+            <label className="mb-2 text-base font-bold text-slate-700">
               Nombre completo
             </label>
             <input
-              className="border rounded-md px-3 py-2 border-gray-300"
+              className="rounded-xl border border-slate-300 px-3 py-2.5"
               type="text"
               placeholder="Nombre completo"
             />
           </div>
-          <div className="flex flex-col mb-2">
-            <label className="font-semibold text-lg mb-2">Dirección</label>
+          <div className="mb-3 flex flex-col">
+            <label className="mb-2 text-base font-bold text-slate-700">Dirección</label>
             <input
-              className="border rounded-md px-3 py-2 border-gray-300"
+              className="rounded-xl border border-slate-300 px-3 py-2.5"
               type="text"
               placeholder="Dirección"
             />
           </div>
-          <div className="flex flex-col mb-2">
-            <label className="font-semibold text-lg mb-2">Estado</label>
+          <div className="mb-3 flex flex-col">
+            <label className="mb-2 text-base font-bold text-slate-700">Estado</label>
             <select
               name="stateOfMex"
-              className="border rounded-md px-3 py-2 border-gray-300"
+              className="rounded-xl border border-slate-300 px-3 py-2.5"
             >
               {statesOfMexico.map((state) => (
                 <option key={state.abbreviation} value={state.abbreviation}>
@@ -81,19 +78,18 @@ const PaymentForm: FC<PaymentFormProps> = ({ productsSelected }) => {
               ))}
             </select>
           </div>
-          <div className="flex flex-col mb-2">
-            <label className="font-semibold text-lg mb-2">Teléfono</label>
+          <div className="mb-3 flex flex-col">
+            <label className="mb-2 text-base font-bold text-slate-700">Teléfono</label>
             <input
-              className="border rounded-md px-3 py-2 border-gray-300"
+              className="rounded-xl border border-slate-300 px-3 py-2.5"
               type="text"
               placeholder="teléfono"
             />
           </div>
-          <div className="flex flex-col mb-2">
-            <label className="font-semibold text-lg mb-2">Notas</label>
-            <input
-              className="border rounded-md px-3 py-2 border-gray-300 h-[100px]"
-              type="textarea"
+          <div className="mb-2 flex flex-col">
+            <label className="mb-2 text-base font-bold text-slate-700">Notas</label>
+            <textarea
+              className="min-h-[120px] rounded-xl border border-slate-300 px-3 py-2.5"
               placeholder="Notas adicionales (ej: notas especiales para la entrega, etc.)"
             />
           </div>

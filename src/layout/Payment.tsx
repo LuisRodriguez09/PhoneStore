@@ -4,9 +4,13 @@ import PaymentContainer from "../modules/Payment/PaymentContainer";
 
 const Payment = () => {
   return (
-    <main>
+    <main className="flex min-h-screen flex-col">
       <Header />
-      <PaymentContainer />
+      <div className="flex-1 bg-slate-100/70 py-6 sm:py-8">
+        <div className="content-wrap">
+          <PaymentContainer />
+        </div>
+      </div>
       <Footer />
     </main>
   );

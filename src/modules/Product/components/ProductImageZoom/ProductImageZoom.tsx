@@ -24,45 +24,41 @@ const ProductImageZoom: FC<ProductImageZoomProps> = ({
   }, [mainPhoto]);
 
   return (
-    <>
-      <div className="flex flex-col justify-between mr-2">
+    <div className="flex w-full flex-col-reverse gap-3 sm:flex-row">
+      <div className="flex flex-row justify-between gap-2 sm:flex-col sm:justify-start">
         <Zoom>
           <img
             alt="first main photo"
             src={mainPhoto}
-            width="170"
-            className="mb-2 rounded-xl"
+            className="h-24 w-24 rounded-xl border border-slate-200 object-cover sm:h-28 sm:w-28"
             onClick={() => handleChangePhoto(mainPhoto)}
           />
         </Zoom>
         <Zoom>
           <img
-            alt="That Wanaka Tree, New Zealand by Laura Smetsers"
+            alt="segunda foto del producto"
             src={secPhoto}
-            width="170"
-            className="mb-2 rounded-xl"
-            onClick={() => handleChangePhoto(mainPhoto)}
+            className="h-24 w-24 rounded-xl border border-slate-200 object-cover sm:h-28 sm:w-28"
+            onClick={() => handleChangePhoto(secPhoto)}
           />
         </Zoom>
         <Zoom>
           <img
-            alt="That Wanaka Tree, New Zealand by Laura Smetsers"
+            alt="tercera foto del producto"
             src={trdPhoto}
-            width="170"
-            className="rounded-xl"
-            onClick={() => handleChangePhoto(mainPhoto)}
+            className="h-24 w-24 rounded-xl border border-slate-200 object-cover sm:h-28 sm:w-28"
+            onClick={() => handleChangePhoto(trdPhoto)}
           />
         </Zoom>
       </div>
       <Zoom>
         <img
-          alt="That Wanaka Tree, New Zealand by Laura Smetsers"
+          alt="imagen principal del producto"
           src={currentPhoto}
-          width="515"
-          className="rounded-xl"
+          className="max-h-[520px] w-full rounded-2xl border border-slate-200 object-cover"
         />
       </Zoom>
-    </>
+    </div>
   );
 };
 

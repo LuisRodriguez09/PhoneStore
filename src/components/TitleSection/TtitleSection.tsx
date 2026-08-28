@@ -1,11 +1,20 @@
 const TitleSection = () => {
   return (
-    <section className="lg:px-28 my-20">
-      <div className="text-gray-700 text-4xl font-bold">
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-pink-500 to-red-500">
-          Phone store.
-        </span>
-        <span className="ml-2 text-[#6e6e73]">Regala magia en estas fiestas.</span>
+    <section className="content-wrap py-10 sm:py-14 lg:py-20">
+      <div className="max-w-4xl text-left">
+        <h1 className="text-4xl font-black  tracking-tight text-slate-900 sm:text-5xl lg:text-7xl">
+          <span>Tienda.</span>
+          <span className="block text-slate-500 sm:inline"> Compra mejor, más rápido y sin ruido.</span>
+        </h1>
+
+        <div className="mt-8 flex flex-col gap-3 text-lg font-semibold text-sky-600 sm:flex-row sm:gap-8">
+          <a href="#catalogo" className="transition hover:text-sky-700 no-underline">
+            Ver catálogo ↗
+          </a>
+          <a href="#destacados" className="transition hover:text-sky-700 no-underline">
+            Ver destacados ↗
+          </a>
+        </div>
       </div>
     </section>
   );

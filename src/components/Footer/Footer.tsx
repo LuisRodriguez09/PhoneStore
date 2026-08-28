@@ -1,4 +1,3 @@
-import { Col, Container, Row } from "react-bootstrap";
 import {
   PhoneFill,
   EnvelopeFill,
@@ -7,71 +6,57 @@ import {
   Instagram,
   Twitter,
 } from "react-bootstrap-icons";
-import "../../style.css";
-import { Box, Column, FooterLink, Social } from "./Styles";
 
 function Footer() {
   return (
-    <Box>
-      <Container>
-        <Row>
-          <Col>
-            <div>
-              <h6 className="mb-4">SIGN UP FOR OUR NEWSLETTER</h6>
+    <footer className="mt-auto bg-slate-950 text-slate-200">
+      <div className="content-wrap grid grid-cols-1 gap-8 py-10 sm:py-12 lg:grid-cols-3 lg:gap-12">
+        <section>
+          <h6 className="mb-4 text-sm font-black tracking-wide text-white">SIGN UP FOR OUR NEWSLETTER</h6>
+          <div className="flex items-center gap-3">
+            <a className="rounded-full border border-slate-700 p-2 transition hover:border-slate-500 hover:bg-slate-900" href="#" aria-label="Facebook">
+              <Facebook />
+            </a>
+            <a className="rounded-full border border-slate-700 p-2 transition hover:border-slate-500 hover:bg-slate-900" href="#" aria-label="Instagram">
+              <Instagram />
+            </a>
+            <a className="rounded-full border border-slate-700 p-2 transition hover:border-slate-500 hover:bg-slate-900" href="#" aria-label="Twitter">
+              <Twitter />
+            </a>
+          </div>
+        </section>
 
-              <FooterLink>
-                <Social className="me-3">
-                  <Facebook></Facebook>
-                </Social>
-              </FooterLink>
-              <FooterLink>
-                <Social className="me-3">
-                  <Instagram></Instagram>
-                </Social>
-              </FooterLink>
-              <FooterLink>
-                <Social className="me-3">
-                  <Twitter></Twitter>
-                </Social>
-              </FooterLink>
-            </div>
-          </Col>
-          <Col>
-            <h6 className="mb-4">Pages</h6>
-            <Column>
-              <FooterLink>Home</FooterLink>
-              <FooterLink>About</FooterLink>
-              <FooterLink>Women</FooterLink>
-              <FooterLink>Men</FooterLink>
-              <FooterLink>Accessories</FooterLink>
-              <FooterLink>Contact</FooterLink>
-            </Column>
-            <Column>
-              <FooterLink></FooterLink>
-              <FooterLink></FooterLink>
-              <FooterLink></FooterLink>
-            </Column>
-          </Col>
-          <Col>
-            <h6 className="mb-4">CONTACTO</h6>
-            <Column>
-              <FooterLink>
-                <GeoAltFill className="me-2"></GeoAltFill>
-                C. Libertad 514, Zona Centro, 31000 Chihuahua, Chih.
-              </FooterLink>
-              <FooterLink>
-                <EnvelopeFill className="me-2"></EnvelopeFill>
-                phoneplanet323@gmail.com
-              </FooterLink>
-              <FooterLink>
-                <PhoneFill className="me-2"></PhoneFill>
-                +52 639 117 6171
-              </FooterLink>
-            </Column>
-          </Col>
-        </Row>
-      </Container>
-    </Box>
+        <section>
+          <h6 className="mb-4 text-sm font-black tracking-wide text-white">PAGES</h6>
+          <div className="grid grid-cols-2 gap-y-2 text-sm text-slate-400">
+            <a className="transition hover:text-white" href="#">Home</a>
+            <a className="transition hover:text-white" href="#">Men</a>
+            <a className="transition hover:text-white" href="#">About</a>
+            <a className="transition hover:text-white" href="#">Accessories</a>
+            <a className="transition hover:text-white" href="#">Women</a>
+            <a className="transition hover:text-white" href="#">Contact</a>
+          </div>
+        </section>
+
+        <section>
+          <h6 className="mb-4 text-sm font-black tracking-wide text-white">CONTACTO</h6>
+          <div className="space-y-3 text-sm text-slate-400">
+            <p className="flex items-start gap-2">
+              <GeoAltFill className="mt-0.5 min-w-4" />
+              C. Libertad 514, Zona Centro, 31000 Chihuahua, Chih.
+            </p>
+            <p className="flex items-start gap-2">
+              <EnvelopeFill className="mt-0.5 min-w-4" />
+              phoneplanet323@gmail.com
+            </p>
+            <p className="flex items-start gap-2">
+              <PhoneFill className="mt-0.5 min-w-4" />
+              +52 639 117 6171
+            </p>
+          </div>
+        </section>
+      </div>
+    </footer>
   );
 }
 
