@@ -11,7 +11,7 @@ interface PaymentFormProps {
 const PaymentForm: FC<PaymentFormProps> = ({ productsSelected }) => {
   const message = `Hola, me gustaría realizar el pago de mi pedido. ¿Podrías ayudarme?
   ${productsSelected
-    .map((product) => `${product.name} - ${product.price} }`)
+    .map((product) => `${product.name} - ${product.price}`)
     .join("\n")}
   `;
 
