@@ -6,15 +6,26 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const categories = [
-    { label: "Destacados", href: "#destacados" },
-    { label: "Catálogo", href: "#catalogo" },
-    { label: "Seminuevos", href: "#catalogo" },
-    { label: "Entrega", href: "#destacados" },
-    { label: "Soporte", href: "#catalogo" },
+    { label: "Destacados", href: "/#catalog" },
+    { label: "Catálogo", href: "/#catalog" },
+    { label: "Seminuevos", href: "/#catalog" },
+    { label: "Entrega", href: "/#trade-in" },
+    { label: "Soporte", href: "/#catalog" },
   ];
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  const navigateToSection = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    event.preventDefault();
+    closeMobileMenu();
+    navigate("/");
+    const selector = href.slice(href.indexOf("#"));
+    window.setTimeout(() => {
+      document.querySelector(selector)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", href);
+    }, 100);
   };
 
   const iconButtonClass =
@@ -48,6 +59,7 @@ const Header = () => {
                   <a
                     href={category.href}
                     className="transition hover:text-slate-900"
+                    onClick={(event) => navigateToSection(event, category.href)}
                   >
                     {category.label}
                   </a>
@@ -57,7 +69,7 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center gap-0.5 sm:gap-1 md:min-w-[180px] md:justify-end">
-            <a href="#catalogo" className={iconButtonClass} aria-label="Explorar catálogo">
+            <a href="/#catalog" className={iconButtonClass} aria-label="Explorar catálogo" onClick={(event) => navigateToSection(event, "/#catalog")}>
               <svg
                 className="h-5 w-5"
                 viewBox="0 0 24 24"
@@ -128,7 +140,7 @@ const Header = () => {
                     <a
                       href={category.href}
                       className="flex min-h-11 items-center rounded-2xl bg-slate-50 px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100"
-                      onClick={closeMobileMenu}
+                      onClick={(event) => navigateToSection(event, category.href)}
                     >
                       {category.label}
                     </a>
@@ -143,7 +155,7 @@ const Header = () => {
       <div className="border-t border-slate-200/80 bg-white/70">
         <div className="content-wrap py-3 text-center text-sm text-slate-600">
           Equipos seminuevos verificados y atención real por WhatsApp.
-          <a href="#catalogo" className="ml-2 font-semibold text-sky-600 transition hover:text-sky-700">
+          <a href="/#catalog" className="ml-2 font-semibold text-sky-600 transition hover:text-sky-700" onClick={(event) => navigateToSection(event, "/#catalog")}>
             Explorar catálogo
           </a>
         </div>
