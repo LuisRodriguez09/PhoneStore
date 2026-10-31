@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { phones } from "../../services/phones";
 
 interface TabsMainPageProps {
   productsSelected: string;
@@ -9,7 +10,11 @@ const TabsMainPage: FC<TabsMainPageProps> = ({
   productsSelected,
   setProductsSelected,
 }) => {
-  const categories = ["Todos", "iPhone 14", "iPhone 13", "iPhone 12", "iPhone 11"];
+  const models = [...new Set(phones.flatMap((phone) => {
+    const model = phone.name.match(/^iPhone \d+/)?.[0];
+    return model ? [model] : [];
+  }))].sort((a, b) => b.localeCompare(a, "es", { numeric: true }));
+  const categories = ["Todos", ...models];
 
   return (
     <div className="category-tabs" role="group" aria-label="Filtrar por modelo">

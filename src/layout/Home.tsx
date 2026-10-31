@@ -5,7 +5,7 @@ import TitleSection from "../components/TitleSection/TtitleSection";
 
 const Home = () => {
   return (
-    <main className="storefront">
+    <main className="storefront flex min-h-screen flex-col">
       <Header />
       <TitleSection />
       <Products />

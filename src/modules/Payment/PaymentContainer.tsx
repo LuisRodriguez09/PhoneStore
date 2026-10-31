@@ -6,7 +6,7 @@ const PaymentContainer = () => {
   const { productsSelected } = useProductsStore();
 
   return (
-    <div className="lg:flex-row flex flex-col h-full">
+    <div className="flex h-full flex-col gap-4 lg:flex-row">
       {/* <FlagPayment productsSelected={productsSelected} /> */}
       <PaymentForm productsSelected={productsSelected} />
       <PaymentList productsSelected={productsSelected} />

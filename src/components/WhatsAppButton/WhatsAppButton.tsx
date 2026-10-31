@@ -11,9 +11,13 @@ const WhatsAppButton = () => {
   };
 
   return (
-    <div className="whatsapp-button" onClick={openWhatsAppChat}>
+    <button
+      className="whatsapp-button"
+      onClick={openWhatsAppChat}
+      aria-label="Abrir WhatsApp"
+    >
       <FaWhatsapp size={32} color="#25D366" />
-    </div>
+    </button>
   );
 };
 

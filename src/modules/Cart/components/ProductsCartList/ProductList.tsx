@@ -15,9 +15,9 @@ const ProductsCartList: FC<ProductsCartList> = ({ productsSelected }) => {
       {productsSelected.map((product: Product) => (
         <ProductCart key={product.id} {...product} />
       ))}
-      <div className="flex justify-center">
+      <div className="mt-6 flex justify-center">
         <button
-          className="bg-[#f5e926] w-1/3 rounded-md py-2"
+          className="w-full rounded-xl bg-amber-300 py-3 font-bold text-slate-900 transition hover:bg-amber-200 sm:w-72"
           onClick={() => navigate("/payment")}
         >
           Pagar

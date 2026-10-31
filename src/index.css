@@ -10,3 +10,14 @@
 .fontArial {
   font-family: Arial, sans-serif;
 }
+
+.content-wrap {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .content-wrap {
+    width: min(1200px, calc(100% - 3rem));
+  }
+}

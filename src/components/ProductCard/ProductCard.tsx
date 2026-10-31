@@ -21,7 +21,7 @@ const ProductCard: FC<Product> = (product) => {
       </Link>
       <div className="product-card-copy">
         <h3><Link to={`/product/${id}`}>{name}</Link></h3>
-        <p className="product-price">${price} MXN</p>
+        <p className="product-price">${String(price).replace(/\s*MXN$/i, "")} MXN</p>
         <button className="add-to-cart-button" type="button" onClick={handleAddToCart}>
           <BagPlus size={16} aria-hidden="true" />
           Agregar al carrito

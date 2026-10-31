@@ -46,7 +46,7 @@ const ProductContainer = () => {
           <Link className="product-back-link" to="/#catalogo">← Volver a equipos</Link>
           <span className="product-detail-eyebrow">Equipo revisado</span>
           <h1 id="product-name">{phone.name}</h1>
-          <p className="product-detail-price">${phone.price} <span>MXN</span></p>
+          <p className="product-detail-price">${String(phone.price).replace(/\s*MXN$/i, "")} <span>MXN</span></p>
           <p className="product-detail-description">{phone.description}</p>
           {phone.info.length > 0 && (
             <ul className="product-detail-features">
