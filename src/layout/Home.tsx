@@ -5,9 +5,8 @@ import TitleSection from "../components/TitleSection/TtitleSection";
 
 const Home = () => {
   return (
-    <main>
+    <main className="storefront">
       <Header />
-      {/* <MainSlider /> */}
       <TitleSection />
       <Products />
       <Footer /> 

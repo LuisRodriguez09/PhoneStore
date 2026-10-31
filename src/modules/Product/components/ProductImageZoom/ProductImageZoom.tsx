@@ -6,63 +6,50 @@ interface ProductImageZoomProps {
   mainPhoto: string;
   secPhoto: string;
   trdPhoto: string;
+  productName: string;
 }
 
 const ProductImageZoom: FC<ProductImageZoomProps> = ({
   mainPhoto,
   secPhoto,
   trdPhoto,
+  productName,
 }) => {
   const [currentPhoto, setCurrentPhoto] = useState(mainPhoto);
-
-  const handleChangePhoto = (photo: string) => {
-    setCurrentPhoto(photo);
-  };
+  const photos = [mainPhoto, secPhoto, trdPhoto].filter(
+    (photo, index, list) => Boolean(photo) && list.indexOf(photo) === index
+  );
 
   useEffect(() => {
     setCurrentPhoto(mainPhoto);
   }, [mainPhoto]);
 
   return (
-    <>
-      <div className="flex flex-col justify-between mr-2">
+    <section className="product-gallery" aria-label={`Fotos de ${productName}`}>
+      <div className="product-thumbnails" role="group" aria-label="Seleccionar foto">
+        {photos.map((photo, index) => (
+          <button
+            className={`product-thumbnail${currentPhoto === photo ? " is-active" : ""}`}
+            key={photo}
+            type="button"
+            aria-label={`Ver foto ${index + 1} de ${productName}`}
+            aria-pressed={currentPhoto === photo}
+            onClick={() => setCurrentPhoto(photo)}
+          >
+            <img src={photo} alt="" loading="lazy" decoding="async" />
+          </button>
+        ))}
+      </div>
+      <div className="product-image-stage">
         <Zoom>
           <img
-            alt="first main photo"
-            src={mainPhoto}
-            width="170"
-            className="mb-2 rounded-xl"
-            onClick={() => handleChangePhoto(mainPhoto)}
-          />
-        </Zoom>
-        <Zoom>
-          <img
-            alt="That Wanaka Tree, New Zealand by Laura Smetsers"
-            src={secPhoto}
-            width="170"
-            className="mb-2 rounded-xl"
-            onClick={() => handleChangePhoto(mainPhoto)}
-          />
-        </Zoom>
-        <Zoom>
-          <img
-            alt="That Wanaka Tree, New Zealand by Laura Smetsers"
-            src={trdPhoto}
-            width="170"
-            className="rounded-xl"
-            onClick={() => handleChangePhoto(mainPhoto)}
+            className="product-main-image"
+            alt={`${productName}, foto ${photos.indexOf(currentPhoto) + 1}`}
+            src={currentPhoto}
           />
         </Zoom>
       </div>
-      <Zoom>
-        <img
-          alt="That Wanaka Tree, New Zealand by Laura Smetsers"
-          src={currentPhoto}
-          width="515"
-          className="rounded-xl"
-        />
-      </Zoom>
-    </>
+    </section>
   );
 };
 

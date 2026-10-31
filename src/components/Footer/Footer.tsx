@@ -1,77 +1,35 @@
-import { Col, Container, Row } from "react-bootstrap";
-import {
-  PhoneFill,
-  EnvelopeFill,
-  GeoAltFill,
-  Facebook,
-  Instagram,
-  Twitter,
-} from "react-bootstrap-icons";
-import "../../style.css";
-import { Box, Column, FooterLink, Social } from "./Styles";
+import { PHONE_NUMBER } from "../../constants";
 
 function Footer() {
   return (
-    <Box>
-      <Container>
-        <Row>
-          <Col>
-            <div>
-              <h6 className="mb-4">SIGN UP FOR OUR NEWSLETTER</h6>
-
-              <FooterLink>
-                <Social className="me-3">
-                  <Facebook></Facebook>
-                </Social>
-              </FooterLink>
-              <FooterLink>
-                <Social className="me-3">
-                  <Instagram></Instagram>
-                </Social>
-              </FooterLink>
-              <FooterLink>
-                <Social className="me-3">
-                  <Twitter></Twitter>
-                </Social>
-              </FooterLink>
-            </div>
-          </Col>
-          <Col>
-            <h6 className="mb-4">Pages</h6>
-            <Column>
-              <FooterLink>Home</FooterLink>
-              <FooterLink>About</FooterLink>
-              <FooterLink>Women</FooterLink>
-              <FooterLink>Men</FooterLink>
-              <FooterLink>Accessories</FooterLink>
-              <FooterLink>Contact</FooterLink>
-            </Column>
-            <Column>
-              <FooterLink></FooterLink>
-              <FooterLink></FooterLink>
-              <FooterLink></FooterLink>
-            </Column>
-          </Col>
-          <Col>
-            <h6 className="mb-4">CONTACTO</h6>
-            <Column>
-              <FooterLink>
-                <GeoAltFill className="me-2"></GeoAltFill>
-                C. Libertad 514, Zona Centro, 31000 Chihuahua, Chih.
-              </FooterLink>
-              <FooterLink>
-                <EnvelopeFill className="me-2"></EnvelopeFill>
-                phoneplanet323@gmail.com
-              </FooterLink>
-              <FooterLink>
-                <PhoneFill className="me-2"></PhoneFill>
-                +52 639 117 6171
-              </FooterLink>
-            </Column>
-          </Col>
-        </Row>
-      </Container>
-    </Box>
+    <footer className="store-footer" id="contacto">
+      <div className="footer-inner">
+        <div className="footer-brand">
+          <a className="store-brand" href="/" aria-label="Phone Planet, inicio">
+            <img className="brand-logo" src="/branding/picture-profile-phone.jpg" alt="" />
+            <span>Phone Planet</span>
+          </a>
+          <p>Tu tienda local de tecnología. Encuentra tu próximo iPhone con atención honesta y personalizada.</p>
+        </div>
+        <div>
+          <h2>Explora</h2>
+          <nav className="footer-links" aria-label="Enlaces de tienda">
+            <a href="/#catalogo">Ver equipos</a>
+            <a href="/#beneficios">Compra segura</a>
+            <a href="/cart">Mi carrito</a>
+          </nav>
+        </div>
+        <div>
+          <h2>¿Te ayudamos?</h2>
+          <div className="footer-links">
+            <a href={`https://wa.me/${PHONE_NUMBER}`} target="_blank" rel="noreferrer">Escríbenos por WhatsApp</a>
+            <a href="mailto:phoneplanet323@gmail.com">phoneplanet323@gmail.com</a>
+            <span>C. Libertad 514, Zona Centro, Chihuahua</span>
+          </div>
+        </div>
+      </div>
+      <div className="footer-bottom">© {new Date().getFullYear()} Phone Planet · Chihuahua, México</div>
+    </footer>
   );
 }
 

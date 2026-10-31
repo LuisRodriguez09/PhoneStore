@@ -1,73 +1,68 @@
-import { useEffect, useState } from "react";
 import { phones } from "../../services/phones";
 import ProductImageZoom from "./components/ProductImageZoom/ProductImageZoom";
-import { Product } from "../../types/products";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useProductsStore } from "../../store/products";
 import toast from "../../utils/toast";
 
 const ProductContainer = () => {
   const { productId } = useParams();
-  const { setNewProduct } = useProductsStore();
+  const setNewProduct = useProductsStore((state) => state.setNewProduct);
   const navigate = useNavigate();
-
-  const [phone, setPhone] = useState<Product>({
-    id: 0,
-    categories: [],
-    description: "",
-    info: [],
-    isAddedToWishlist: false,
-    mainPhoto: "",
-    maxQuantity: 0,
-    name: "",
-    price: 0,
-    secPhoto: "",
-    trdPhoto: "",
-  });
-
-  useEffect(() => {
-    const phone = phones.find((phone) => phone.id === productId);
-    if (phone) {
-      setPhone(phone);
-    }
-  }, []);
+  const phone = phones.find((item) => item.id === productId);
 
   const addToCart = () => {
-    setNewProduct({ ...phone });
+    if (!phone) return;
+    setNewProduct(phone);
     toast("success", "Producto agregado al carrito.");
   };
 
   const goToPayment = () => {
-    setNewProduct({ ...phone });
+    if (!phone) return;
+    setNewProduct(phone);
     navigate("/payment");
   };
 
+  if (!phone) {
+    return (
+      <section className="product-not-found">
+        <h1>No encontramos este equipo</h1>
+        <Link className="product-back-link" to="/#catalogo">
+          Volver al catálogo
+        </Link>
+      </section>
+    );
+  }
+
   return (
-    <main className="lg:px-32 py-10 h-auto bg-[#f7f9f9] flex justify-between">
-      <ProductImageZoom
-        mainPhoto={phone.mainPhoto}
-        secPhoto={phone.secPhoto}
-        trdPhoto={phone.trdPhoto}
-      />
-      <div className="border-2 p-3 rounded-xl w-[40%] shadow-sm bg-white">
-        <h3>{phone.name}</h3>
-        <p className="font-bold">${phone.price}</p>
-        <ul className="p-0 text-xs font-semibold">
-          {phone.info.map((item, index) => (
-            <li key={index}>- {item}</li>
-          ))}
-        </ul>
-        <div className="flex">
-          <button className="border-2 w-40 p-2 rounded-md" onClick={addToCart}>
-            Agregar al carrito
-          </button>
-          <button
-            className="border-2 w-40 p-2 rounded-md"
-            onClick={goToPayment}
-          >
-            Comprar ahora
-          </button>
-        </div>
+    <main className="product-detail-page">
+      <div className="product-detail">
+        <ProductImageZoom
+          mainPhoto={phone.mainPhoto}
+          secPhoto={phone.secPhoto}
+          trdPhoto={phone.trdPhoto}
+          productName={phone.name}
+        />
+        <section className="product-detail-card" aria-labelledby="product-name">
+          <Link className="product-back-link" to="/#catalogo">← Volver a equipos</Link>
+          <span className="product-detail-eyebrow">Equipo revisado</span>
+          <h1 id="product-name">{phone.name}</h1>
+          <p className="product-detail-price">${phone.price} <span>MXN</span></p>
+          <p className="product-detail-description">{phone.description}</p>
+          {phone.info.length > 0 && (
+            <ul className="product-detail-features">
+              {phone.info.map((item) => <li key={item}>{item}</li>)}
+            </ul>
+          )}
+          <div className="product-detail-actions">
+            <button className="product-add-button" type="button" onClick={addToCart}>
+              Agregar al carrito
+            </button>
+            <button className="product-buy-button" type="button" onClick={goToPayment}>
+              Comprar ahora
+            </button>
+          </div>
+          <p className="product-detail-assurance">Compra con confianza · Atención personalizada en Chihuahua</p>
+        </section>
       </div>
     </main>
   );

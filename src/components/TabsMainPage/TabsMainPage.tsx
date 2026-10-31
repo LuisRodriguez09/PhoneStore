@@ -9,36 +9,22 @@ const TabsMainPage: FC<TabsMainPageProps> = ({
   productsSelected,
   setProductsSelected,
 }) => {
+  const categories = ["Todos", "iPhone 14", "iPhone 13", "iPhone 12", "iPhone 11"];
+
   return (
-    <ul className="flex lg:mx-24">
-      <li
-        className={`px-4 py-2 cursor-pointer border-b-4 ${
-          productsSelected === "bestSellers" &&
-          "border-x-4 border-t-4 border-slate-900"
-        }`}
-        onClick={() => setProductsSelected("bestSellers")}
-      >
-        Más Vendidos
-      </li>
-      <li
-        className={`px-4 py-2 cursor-pointer border-b-4 ${
-          productsSelected === "newer" &&
-          "border-x-4 border-t-4 border-slate-900"
-        } `}
-        onClick={() => setProductsSelected("newer")}
-      >
-        Lo más nuevo
-      </li>
-      <li
-        className={`px-4 py-2 cursor-pointer border-b-4 ${
-          productsSelected === "offers" &&
-          "border-x-4 border-t-4 border-slate-900"
-        }  `}
-        onClick={() => setProductsSelected("offers")}
-      >
-        Ofertas
-      </li>
-    </ul>
+    <div className="category-tabs" role="group" aria-label="Filtrar por modelo">
+      {categories.map((category) => (
+        <button
+          key={category}
+          className="category-tab"
+          type="button"
+          aria-pressed={productsSelected === category}
+          onClick={() => setProductsSelected(category)}
+        >
+          {category}
+        </button>
+      ))}
+    </div>
   );
 };
 
