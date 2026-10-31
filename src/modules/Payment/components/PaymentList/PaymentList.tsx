@@ -47,7 +47,7 @@ const PaymentList: FC<PaymentListProps> = ({ productsSelected }) => {
         </div>
       </div>
       <div className="mt-4">
-        <button className="flex h-[48px] w-full items-center justify-center rounded-xl bg-slate-900 p-3 font-bold text-white transition hover:bg-slate-700" type="button" onClick={completeOrder}>
+        <button className="payment-order-button flex min-h-[48px] w-full items-center justify-center p-3" type="button" onClick={completeOrder}>
           Realizar pedido
         </button>
       </div>

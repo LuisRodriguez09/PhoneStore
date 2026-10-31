@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { phones } from "../../services/phones";
 
 interface TabsMainPageProps {
   productsSelected: string;
@@ -9,48 +10,26 @@ const TabsMainPage: FC<TabsMainPageProps> = ({
   productsSelected,
   setProductsSelected,
 }) => {
-  const tabBaseClass =
-    "whitespace-nowrap rounded-full border px-4 py-2 text-sm font-semibold transition";
+  const models = [...new Set(phones.flatMap((phone) => {
+    const model = phone.name.match(/^iPhone \d+/)?.[0];
+    return model ? [model] : [];
+  }))].sort((a, b) => b.localeCompare(a, "es", { numeric: true }));
+  const categories = ["Todos", ...models];
 
   return (
-    <ul className="content-wrap flex gap-2 overflow-x-auto pb-2">
-      <li
-        className={`${tabBaseClass} cursor-pointer ${
-          productsSelected === "bestSellers" &&
-          "border-slate-900 bg-slate-900 text-white"
-        } ${
-          productsSelected !== "bestSellers" &&
-          "border-slate-300 bg-white text-slate-700 hover:border-slate-400"
-        }`}
-        onClick={() => setProductsSelected("bestSellers")}
-      >
-        Más Vendidos
-      </li>
-      <li
-        className={`${tabBaseClass} cursor-pointer ${
-          productsSelected === "newer" &&
-          "border-slate-900 bg-slate-900 text-white"
-        } ${
-          productsSelected !== "newer" &&
-          "border-slate-300 bg-white text-slate-700 hover:border-slate-400"
-        }`}
-        onClick={() => setProductsSelected("newer")}
-      >
-        Lo más nuevo
-      </li>
-      <li
-        className={`${tabBaseClass} cursor-pointer ${
-          productsSelected === "offers" &&
-          "border-slate-900 bg-slate-900 text-white"
-        } ${
-          productsSelected !== "offers" &&
-          "border-slate-300 bg-white text-slate-700 hover:border-slate-400"
-        }`}
-        onClick={() => setProductsSelected("offers")}
-      >
-        Ofertas
-      </li>
-    </ul>
+    <div className="category-tabs" role="group" aria-label="Filtrar por modelo">
+      {categories.map((category) => (
+        <button
+          key={category}
+          className="category-tab"
+          type="button"
+          aria-pressed={productsSelected === category}
+          onClick={() => setProductsSelected(category)}
+        >
+          {category}
+        </button>
+      ))}
+    </div>
   );
 };
 

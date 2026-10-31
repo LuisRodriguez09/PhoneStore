@@ -5,12 +5,11 @@ import TitleSection from "../components/TitleSection/TtitleSection";
 
 const Home = () => {
   return (
-    <main className="flex min-h-screen flex-col">
+    <main className="storefront flex min-h-screen flex-col">
       <Header />
-      {/* <MainSlider /> */}
       <TitleSection />
       <Products />
-      <Footer />
+      <Footer /> 
     </main>
   );
 };

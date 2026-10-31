@@ -3,71 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --page-bg: #f3f6f8;
-  --surface: #ffffff;
-  --surface-soft: #f8fafc;
-  --ink: #121926;
-  --ink-muted: #5c677d;
-  --line: #dbe2ea;
-  --brand: #0f172a;
-  --brand-soft: #1e293b;
-  --font-sans: "SF Pro Display", "SF Pro Icons", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html,
-body,
-#root {
-  min-height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: var(--font-sans);
-  background: linear-gradient(180deg, #fafafa 0%, #f5f5f7 100%);
-  color: var(--ink);
-}
-
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-}
-
-.fontGotham {
-  font-family: var(--font-sans) !important;
+  color-scheme: light;
+  font-family: Arial, sans-serif;
 }
 
 .fontArial {
-  font-family: var(--font-sans) !important;
+  font-family: Arial, sans-serif;
 }
 
 .content-wrap {
-  width: min(1200px, 100% - 2rem);
+  width: min(1200px, calc(100% - 2rem));
   margin: 0 auto;
-}
-
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
 }
 
 @media (min-width: 768px) {
   .content-wrap {
-    width: min(1200px, 100% - 3rem);
+    width: min(1200px, calc(100% - 3rem));
   }
 }
